@@ -9,8 +9,9 @@ const app = express();
 
 connectToDatabase();
 
-app.get("/", (req, res) => {
-    res.status(200).send("Hello world!");
+app.get("/tasks", (req, res) => {
+    const tasks = [{ destination: "Estudar programaçao", isCompleted: false }];
+    res.status(200).send(tasks);
 });
 
 app.listen(8000, () => console.log("Listening on port 8000"));
